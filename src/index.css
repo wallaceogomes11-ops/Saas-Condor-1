@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply font-sans bg-gray-50 text-gray-900 antialiased;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  #root {
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100dvh;
+    position: relative;
+    background: #f8faf8;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl
+           font-semibold text-base transition-all duration-200 active:scale-95
+           border-2 border-brand-600 text-brand-700 bg-white
+           hover:bg-brand-50 shadow-sm;
+  }
+  .btn-danger {
+    @apply flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl
+           font-semibold text-base transition-all duration-200 active:scale-95
+           border-2 border-red-500 text-red-600 bg-white
+           hover:bg-red-50 shadow-sm;
+  }
+  .input-field {
+    @apply w-full px-4 py-3.5 rounded-2xl border-2 border-gray-200
+           bg-white text-gray-800 placeholder-gray-400
+           focus:outline-none focus:border-brand-500 transition-colors text-sm font-medium;
+  }
+  .card {
+    @apply bg-white rounded-3xl shadow-card p-5;
+  }
+  .section-label {
+    @apply flex items-center gap-2 text-gray-800 font-semibold text-base mb-3;
+  }
+  .badge-entregue {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full
+           text-xs font-semibold bg-brand-100 text-brand-700;
+  }
+  .badge-pendente {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full
+           text-xs font-semibold bg-amber-100 text-amber-700;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 0; }
+
+/* Safe area bottom */
+.pb-safe { padding-bottom: calc(4rem + env(safe-area-inset-bottom)); }
